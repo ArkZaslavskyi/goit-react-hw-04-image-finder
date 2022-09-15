@@ -79,6 +79,7 @@ class App extends Component {
 
   render() {
     const { images, isLoading, isLastPage, modalImage } = this.state;
+    
     return (
       <Main>
         <Searchbar onSubmit={this.handleSubmit} />

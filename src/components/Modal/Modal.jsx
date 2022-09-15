@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 const ESC_KEY = 27;
 
 class Modal extends Component {
+    
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
     };
@@ -13,7 +14,6 @@ class Modal extends Component {
         window.removeEventListener('keydown', this.handleKeyDown);
     };
 
-    
     handleKeyDown = e => {
         if (e.keyCode === ESC_KEY) {
             this.props.toggleModal();
