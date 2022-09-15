@@ -8,6 +8,8 @@ import Modal from "components/Modal";
 
 import getImage from 'services/api.js';
 
+import { Main } from "./App.styled";
+
 const IMAGES_PER_PAGE = 12;
 
 class App extends Component {
@@ -78,7 +80,7 @@ class App extends Component {
   render() {
     const { images, isLoading, isLastPage, modalImage } = this.state;
     return (
-      <>
+      <Main>
         <Searchbar onSubmit={this.handleSubmit} />
 
         {!!images.length &&
@@ -95,8 +97,8 @@ class App extends Component {
           <Modal
             image={modalImage}
             toggleModal={this.toggleModal} />}
-    </>
-  );
+      </Main>
+    );
   }
 };
 

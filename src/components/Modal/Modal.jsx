@@ -1,4 +1,6 @@
 import { Component } from "react";
+import { BackDrop, FaceDrop } from './Modal.styled';
+import { PropTypes } from 'prop-types';
 
 const ESC_KEY = 27;
 
@@ -22,15 +24,18 @@ class Modal extends Component {
         const { image, toggleModal } = this.props;
 
         return (
-            <div className="Overlay" onClick={() => toggleModal()}>
-                <div className="Modal">
+            <BackDrop onClick={() => toggleModal()}>
+                <FaceDrop>
                     <img src={image} alt="" />
-                </div>
-            </div>
+                </FaceDrop>
+            </BackDrop>
         );
     }
 }
 
-    
+Modal.propType = {
+    image: PropTypes.string.isRequired,
+    toggleModal: PropTypes.func.isRequired,
+};
 
 export default Modal;
